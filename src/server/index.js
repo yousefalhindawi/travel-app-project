@@ -32,7 +32,7 @@ app.post("/forecast", async (req, res) => {
   try {
     // Call Geonames API to get the coordinates
     const geonamesResponse = await axios.get(
-      `https://api.geonames.org/searchJSON?q=${encodeURIComponent(
+      `http://api.geonames.org/searchJSON?q=${encodeURIComponent(
         destination
       )}&maxRows=1&username=${process.env.GEONAMES_API_KEY}`
     );
