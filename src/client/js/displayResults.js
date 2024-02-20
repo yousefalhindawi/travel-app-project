@@ -2,24 +2,27 @@ const displayResults = (weatherData, images) => {
   const resultsContainer = document.getElementById("errors");
   resultsContainer.innerHTML = ``;
   const weatherDescription = document.getElementById("forecast-card-text");
-  weatherDescription.innerHTML = `${
-    weatherData.app_temp
-      ? `<p class="text-center">Temperature: ${weatherData.app_temp} &#8451;</p>`
+  weatherDescription.innerHTML = `<div class="d-flex justify-content-center align-items-center"><img
+    class="d-block"
+    src=https://openweathermap.org/img/wn/${
+      weatherData?.icon
+    }.png alt="weather-icon"/></div>
+    ${
+      weatherData.temp
+        ? `<p class="text-center">Temperature: ${weatherData.temp} &#8451;</p>`
+        : ""
+    }
+  ${
+    weatherData.temp_max
+      ? `<p class="text-center">Max Temperature: ${weatherData.temp_max} &#8451;</p>`
       : ""
   }
   ${
-    weatherData.app_max_temp
-      ? `<p class="text-center">Max Temperature: ${weatherData.app_max_temp} &#8451;</p>`
+    weatherData.temp_min
+      ? `<p class="text-center">Min Temperature: ${weatherData.temp_min} &#8451;</p>`
       : ""
   }
-  ${
-    weatherData.app_min_temp
-      ? `<p class="text-center">Min Temperature: ${weatherData.app_min_temp} &#8451;</p>`
-      : ""
-  }
-  <p  class="text-center">Weather Description: ${
-    weatherData.weather.description
-  }</p>`;
+  <p  class="text-center">Humidity: ${weatherData.humidity}</p>`;
 
   const carouselInner = document.getElementById("forecast-carousel-inner");
   let carouselItems = [];
