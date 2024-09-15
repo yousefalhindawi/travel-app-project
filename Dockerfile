@@ -6,7 +6,7 @@ FROM node:18
 # Set the working directory in the container
 WORKDIR /app
 
-COPY ["package.json", "package-lock.json*", "./"]
+COPY ["package.json", "package-lock.json*", "webpack.*", "./"]
 
 # Install the application dependencies
 RUN npm install
