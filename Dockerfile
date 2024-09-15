@@ -6,17 +6,18 @@ FROM node:18
 # Set the working directory in the container
 WORKDIR /app
 
-COPY ["package.json", "package-lock.json*", "webpack.*", "./"]
+COPY ["package.json", "package-lock.json*", "./"]
 
 # Install the application dependencies
 RUN npm install
 # RUN npm install --production && npm run build-prod
-RUN npx update-browserslist-db@latest
-
-RUN npm run build-prod
 
 # Copy the application files into the working directory
 COPY . .
+
+RUN npx update-browserslist-db@latest
+
+RUN npm run build-prod
 
 EXPOSE 8080
 
