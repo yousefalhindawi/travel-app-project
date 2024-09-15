@@ -1,7 +1,7 @@
 # Use the official Node.js image as the base image
 FROM node:18
 
-ENV NODE_ENV=production
+# ENV NODE_ENV=production
 
 # Set the working directory in the container
 WORKDIR /app
@@ -9,7 +9,8 @@ WORKDIR /app
 COPY ["package.json", "package-lock.json*", "./"]
 
 # Install the application dependencies
-RUN npm install --production && npm run build-prod
+RUN npm install && npm run build-prod
+# RUN npm install --production && npm run build-prod
 
 # Copy the application files into the working directory
 COPY . .
