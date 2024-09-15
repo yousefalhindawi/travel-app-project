@@ -22,4 +22,4 @@ RUN npm run build-prod
 EXPOSE 8080
 
 # Define the entry point for the container
-CMD ["npm", "run", "prod"]
+CMD ["npm", "run", "start"]
