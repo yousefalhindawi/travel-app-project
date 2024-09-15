@@ -1,5 +1,5 @@
 # travel-app-project
-Udacity Frontend Nanodegrees - Travel Application Project
+Travel Application Project
 
 ## [Travel Application Project](https://travelapplicationproject-pay53op5.b4a.run/)
 ## [Travel Application Project](https://travel-application-project.onrender.com/)
