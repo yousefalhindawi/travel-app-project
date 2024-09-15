@@ -9,8 +9,9 @@ WORKDIR /app
 COPY ["package.json", "package-lock.json*", "./"]
 
 # Install the application dependencies
-RUN npm install && npm run build-prod
+RUN npm install
 # RUN npm install --production && npm run build-prod
+RUN npm run build-prod
 
 # Copy the application files into the working directory
 COPY . .
