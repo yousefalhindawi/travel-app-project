@@ -12,4 +12,4 @@ COPY . /app
 RUN npm install && npm run build-prod
 
 # Define the entry point for the container
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "prod"]
